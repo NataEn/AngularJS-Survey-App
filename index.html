@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="surveyApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    < {{1+1}}
+    <!-- create a survey form -->
+    <form>
+      <label for="title">Survey Title:</label><br />
+      <input type="text" id="title" name="title" /><br />
+      <hr />
+      <label for="question1">First Question</label><br />
+      <input type="text" id="question1" name="question1" />
+
+      <h4>Possible Answers:</h4>
+      <label for="option1">First Option</label><br />
+      <input type="text" id="option1" name="option1" />
+      <br />
+      <label for="option2">Second Option</label><br />
+      <input type="text" id="option2" name="option2" />
+      <br />
+      <label for="option3">Third Option</label><br />
+      <input type="text" id="option3" name="option3" />
+      <br />
+      <label for="option4">Correct Option</label><br />
+      <input type="text" id="option4" name="option4" />
+      <hr />
+
+      <label for="question2">Second Question</label><br />
+      <input type="text" id="question2" name="question2" />
+      <h4>Possible Answers:</h4>
+      <label for="option1">First Option</label><br />
+      <input type="text" id="option1" name="option1" />
+      <br />
+      <label for="option2">Second Option</label><br />
+      <input type="text" id="option2" name="option2" />
+      <br />
+      <label for="option3">Third Option</label><br />
+      <input type="text" id="option3" name="option3" />
+      <br />
+      <label for="option4">Correct Option</label><br />
+      <input type="text" id="option4" name="option4" />
+      <hr />
+
+      <label for="question3">Third Question</label><br />
+      <input type="text" id="question3" name="question3" />
+      <h4>Possible Answers:</h4>
+      <label for="option1">First Option</label><br />
+      <input type="text" id="option1" name="option1" />
+      <br />
+      <label for="option2">Second Option</label><br />
+      <input type="text" id="option2" name="option2" />
+      <br />
+      <label for="option3">Third Option</label><br />
+      <input type="text" id="option3" name="option3" />
+      <br />
+      <label for="option4">Correct Option</label><br />
+      <input type="text" id="option4" name="option4" />
+      <hr />
+
+      <button type="submit">Save</button> <button>Cancel</button>
+    </form>
+    <!-- display current survey questions -->
+    <survey-list></survey-list>
+
+    <!-- survey results -->
+    <div class="results-container">
+      <div class="user-results">
+        <h2>Your answers:</h2>
+        <div ng-repeat="question in questions" class="result-answer">
+          Question: <span class="question">{{question.title}}</span> Answer:
+          <span class="question">{{question.answer}}</span>
+        </div>
+      </div>
+      <div>
+        <p>Here we see a graph representation of all results statistics</p>
+      </div>
+    </div>
+    <div ng-view></div>
+
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"
+      integrity="sha512-b+KYIB61Ac71ZJc4ZE18RRJlCvi+rudcHDkcqDsAnWCkuvWYtrrTgIRMCa/qyOI3onkOfm1KCr9ixa/NUkkRzA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"
+      integrity="sha512-cf6zWwIA4d6LHdA2ie+c6ryfAxXuw/q4eBbW8ZLuy6awDUFR2CeB7qnRFypKGe/cbWTAL0sKQxvI6W9oodp8tA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="app.js"></script>
+    <!-- factories -->
+    <script src="factories/surveyFactory.js"></script>
+    <!-- controllers -->
+    <script src="controllers/surveyController.js"></script>
+    <script src="directives/surveysList/surveyListDirective.js"></script>
+    <script src="directives/Navbar/navbarDirective.js"></script>
+  </body>
+</html>
