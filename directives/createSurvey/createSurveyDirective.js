@@ -4,6 +4,5 @@ angular.module("surveyApp").directive("createSurvey", function () {
     restrict: "EA",
     scope: {},
     templateUrl: "createSurvey.html",
-    
   };
 });

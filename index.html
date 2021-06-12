@@ -68,18 +68,7 @@
     <survey-list></survey-list>
 
     <!-- survey results -->
-    <div class="results-container">
-      <div class="user-results">
-        <h2>Your answers:</h2>
-        <div ng-repeat="question in questions" class="result-answer">
-          Question: <span class="question">{{question.title}}</span> Answer:
-          <span class="question">{{question.answer}}</span>
-        </div>
-      </div>
-      <div>
-        <p>Here we see a graph representation of all results statistics</p>
-      </div>
-    </div>
+    <user-results></user-results>
     <div ng-view></div>
 
     <script src="./node_modules/angular/angular.min.js"></script>
@@ -98,9 +87,13 @@
     <script src="app.js"></script>
     <!-- factories -->
     <script src="factories/surveyFactory.js"></script>
+    <script src="factories/userFactory.js"></script>
     <!-- controllers -->
     <script src="controllers/surveyController.js"></script>
+    <script src="controllers/userController.js"></script>
+    <!-- directives -->
     <script src="directives/surveysList/surveyListDirective.js"></script>
+    <script src="directives/userResults/userResultsDirective.js"></script>
     <script src="directives/Navbar/navbarDirective.js"></script>
   </body>
 </html>

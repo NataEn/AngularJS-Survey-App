@@ -12,7 +12,7 @@
         ng-repeat="answer in surveys[currentSurveyIndex].questions[currentSurveyQuestionIndex].answers"
         class="question__answer"
       >
-        <div><span>{{answer}}</span></div>
+        <div ng-click="handleChosenAnswer"><span>{{answer.value}}</span></div>
       </div>
       <button ng-click="incrementCurrentQuestionIndex(1)">Next</button>
       <button ng-click="decrementCurrentQuestionIndex(-1)">Back</button>

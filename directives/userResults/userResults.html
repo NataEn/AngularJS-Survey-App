@@ -1,0 +1,16 @@
+<div class="results-container" ng-controller="UsersController">
+  <h2>Your Answers</h2>
+  <div class="user-results">
+    <div ng-repeat="(surveyName, value) in currentUser.surveys">
+      <span>Survey:</span>
+      <h3>{{surveyName}}</h3>
+      <ul ng-repeat="(key,value) in value.answers">
+        <li><strong>{{key}}</strong> : <span>{{value}}</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="user-results-graph">
+    <p>Here we see a graph representation of all results statistics</p>
+  </div>
+</div>
