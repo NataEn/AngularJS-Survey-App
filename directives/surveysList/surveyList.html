@@ -1,19 +1,21 @@
 <div ng-controller="SurveysController">
-  <div ng-repeat="survey in surveys">
-    <h2 class="survey__title">{{survey.title | uppercase}}</h2>
-    <div
-      ng-repeat="question in survey.questions"
-      class="survey__question-container"
-    >
-      <h3 class="survey__question">{{question.title}}</h3>
+  <div>
+    <h2 class="survey__title">
+      {{surveys[currentSurveyIndex].title | uppercase}}
+    </h2>
+    <div class="survey__question-container">
+      <h3 class="survey__question">
+        {{surveys[currentSurveyIndex].questions[currentSurveyQuestionIndex].title}}
+      </h3>
       <div
         class="question__answers-container"
-        ng-repeat="answer in question.answers"
+        ng-repeat="answer in surveys[currentSurveyIndex].questions[currentSurveyQuestionIndex].answers"
         class="question__answer"
       >
         <span>{{answer}}</span>
       </div>
-      <button>Next</button>
+      <button ng-click="incrementCurrentQuestionIndex(1)">Next</button>
+      <button ng-click="decrementCurrentQuestionIndex(-1)">Back</button>
     </div>
   </div>
 </div>
